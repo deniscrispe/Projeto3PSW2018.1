@@ -15,16 +15,23 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "ServletIndex", urlPatterns = {"/ServletIndex"})
 public class ServletIndex extends HttpServlet {
-    /**
-     * *
-     *
-     * @param req
-     * @param resp
-     * @throws ServletException
-     * @throws IOException
-     */
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+    /**
+     * Método que realiza a validação do formulário, atribuição de variaveis
+     * pelos valores passados nos campos e encaminhamento para página de
+     * histórico.
+     *
+     * @param req objeto HttpServletRequest que contém a solicitação feita pelo
+     * cliente do servlet.
+     * @param resp objeto HttpServletResponse que contém a resposta que o
+     * servlet envia para o cliente
+     * @throws ServletException se a requisição do POST não puder ser tratado
+     * @throws IOException se um erro de entrada ou saída for detectado quando o
+     * servlet manipula o pedido
+     */
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         boolean formValido = true;
 
         //Declaração das variaveis
@@ -34,7 +41,6 @@ public class ServletIndex extends HttpServlet {
         double trabalho = 0;
         double projeto = 0;
         double pf = 0;
-        
 
         //Efetua a validação
         //Pega os valores dos campos
@@ -136,7 +142,8 @@ public class ServletIndex extends HttpServlet {
 
         //Cria um objeto Aluno com os valores dos campos
         Aluno student = new Aluno(aluno, frequencia, p1, trabalho, projeto, pf);
-
+        
+        //Verifica se o formulário é valido, cria o ArrayList de Alunos de histórico e encaminha para página de histórico
         if (formValido) {
             if (req.getServletContext().getAttribute("historico") == null) {
                 ArrayList<Aluno> historico = new ArrayList<>();
@@ -150,10 +157,4 @@ public class ServletIndex extends HttpServlet {
         }
 
     }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
-    }
-
 }

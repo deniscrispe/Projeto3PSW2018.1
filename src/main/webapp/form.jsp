@@ -25,8 +25,7 @@
 
             <button type="submit"> Enviar </button>
             <button type="reset"> Apagar </button>
-            <button type="button" onClick=location.href="historico.jsp"> Histórico </button>
-            
+                        
             <%--
             <%  ArrayList<Aluno> hist = (ArrayList) request.getServletContext().getAttribute("historico");
                 if(hist ==null) {%>

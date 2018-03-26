@@ -44,6 +44,6 @@
 	        
         </table>
         <br>
-        <input type="button" value="Voltar" onClick="history.go(-1)>
+        <button type="button" onClick="history.go(-1)" > Voltar </button>
     </body>
 </html>
