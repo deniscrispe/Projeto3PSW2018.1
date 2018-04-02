@@ -28,7 +28,7 @@ public class Aluno {
     
     /** Método para retorno do Nome do aluno
 
-     *   @return String - {@link #nome */
+     *   @return String - {@link #nome} */
     
     public String getNome(){
         return nome;
@@ -36,7 +36,7 @@ public class Aluno {
     
     /** Método para retorno da frequencia do aluno
 
-     *   @return int - {@link #frequencia */
+     *   @return int - {@link #frequencia} */
     
     public double getFrequencia(){
         return frequencia;
@@ -44,7 +44,7 @@ public class Aluno {
     
     /** Método para retorno da nota da P1
 
-     *   @return double - {@link #p1 */
+     *   @return double - {@link #p1} */
     
     public double getP1(){
         return p1;
@@ -52,7 +52,7 @@ public class Aluno {
     
     /** Método para retorno da nota do Trabalho
 
-     *   @return double - {@link #trabalho */
+     *   @return double - {@link #trabalho} */
     
     public double getTrabalho(){
         return trabalho;
@@ -60,7 +60,7 @@ public class Aluno {
     
     /** Método para retorno da nota do Projeto
 
-     *   @return double - {@link #projeto */
+     *   @return double - {@link #projeto} */
     
     public double getProjeto(){
         return projeto;
@@ -68,7 +68,7 @@ public class Aluno {
     
     /** Método para retorno da nota da PF
 
-     *   @return double - {@link #pf */
+     *   @return double - {@link #pf} */
     
     public double getPf(){
         return pf;

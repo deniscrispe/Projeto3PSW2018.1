@@ -4,9 +4,7 @@
     Author     : denis
 --%>
 
-<%@page import="java.util.ArrayList"%>
-
-<%@ page language="java" import="br.cefetrj.psw.projeto3.*" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,31 +15,28 @@
     </head>
     <body>
         <table border=\"1\"> 
-	<tr> 
+            <tr> 
                 <td>Aluno</td>
                 <td>Nota1</td>                
-		<td>Trabalho</td>
-		<td>Projeto</td>
-		<td>Prova Final</td>
-		<td>Situação</td>
-        </tr>
-                        
-                <%  ArrayList<Aluno> historico = (ArrayList)request.getServletContext().getAttribute("historico");
-                    for(int i=0 ;i< historico.size();i++){
-                        Aluno x = historico.get(i);
-                %>                        
-        <tr>    
-                <td><%=x.getNome()%></td>         
-                <td><%=x.getP1()%></td>
-                <td><%=x.getTrabalho()%></td>
-                <td><%=x.getProjeto()%></td>
-                <td><%=x.getPf()%></td>
-                <td><%=x.situacao()%></td>
-                
-        </tr>
-                <%
-                }%>
-	        
+                <td>Trabalho</td>
+                <td>Projeto</td>
+                <td>Prova Final</td>
+                <td>Situação</td>
+            </tr>
+            <c:if test="${not empty historico}">       
+
+                <c:forEach items="${historico}" var="i">                       
+                    <tr>    
+                        <td>${i.nome}</td>         
+                        <td>${i.p1}</td>
+                        <td>${i.trabalho}</td>
+                        <td>${i.projeto}</td>
+                        <td>${i.pf}</td>
+                        <td>${i.situacao()}</td>
+                    </tr>
+                </c:forEach>
+            </c:if>
+
         </table>
         <br>
         <button type="button" onClick="history.go(-1)" > Voltar </button>
