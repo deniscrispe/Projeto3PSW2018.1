@@ -14,16 +14,18 @@ public class Aluno {
     private double trabalho;
     private double projeto;
     private double pf;
+    private String disciplina;
     
     
     
-    public Aluno(String nome ,double frequencia, double p1, double trabalho, double projeto, double pf){
+    public Aluno(String nome ,double frequencia, double p1, double trabalho, double projeto, double pf, String disciplina){
         this.nome = nome;
         this.frequencia = frequencia;
         this.p1 = p1;
         this.trabalho = trabalho;
         this.projeto = projeto;
-        this.pf = pf;        
+        this.pf = pf;
+        this.disciplina = disciplina;
     }
     
     /** Método para retorno do Nome do aluno
@@ -72,9 +74,16 @@ public class Aluno {
     
     public double getPf(){
         return pf;
-    }   
+    }
     
+    /**
+     
+     * @return String - {@link #disciplina}  */
     
+    public String getDisciplina() {
+        return disciplina;
+    }
+        
     /**
      * Metodo para verificar a situação do aluno na disciplina.
   

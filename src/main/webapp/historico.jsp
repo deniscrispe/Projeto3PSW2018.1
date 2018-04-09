@@ -10,35 +10,55 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" >
         <title>Tabela de Notas</title>
     </head>
     <body>
-        <table border=\"1\"> 
+        <div class="table-responsive">
+        <table class="table table-sm table-striped table-bordered table-hover"> 
+            <thead class="thead-dark">
             <tr> 
-                <td>Aluno</td>
-                <td>Nota1</td>                
-                <td>Trabalho</td>
-                <td>Projeto</td>
-                <td>Prova Final</td>
-                <td>Situação</td>
+                <th scope="col">Aluno</th>
+                <th scope="col">Frequência</th>
+                <th scope="col">Nota1</th>                
+                <th scope="col">Trabalho</th>
+                <th scope="col">Projeto</th>
+                <th scope="col">Prova Final</th>
+                <th scope="col">Disciplina</th>
+                <th scope="col">Situação</th>
             </tr>
+            </thead>
+            <tbody>
             <c:if test="${not empty historico}">       
 
                 <c:forEach items="${historico}" var="i">                       
+                    
                     <tr>    
-                        <td>${i.nome}</td>         
-                        <td>${i.p1}</td>
-                        <td>${i.trabalho}</td>
-                        <td>${i.projeto}</td>
-                        <td>${i.pf}</td>
-                        <td>${i.situacao()}</td>
+                        <th scope="row">${i.nome}</th>
+                        <td scope="row">${i.frequencia}</td>
+                        <td scope="row">${i.p1}</td>
+                        <td scope="row">${i.trabalho}</td>
+                        <td scope="row">${i.projeto}</td>
+                        <td scope="row">${i.pf}</td>
+                        <td scope="row">${i.disciplina}</td>
+                        <td scope="row">${i.situacao()}</td>
                     </tr>
                 </c:forEach>
+            </tbody>
             </c:if>
 
         </table>
+        </div>
         <br>
         <button type="button" onClick="history.go(-1)" > Voltar </button>
+        
+        <script src="js/jquery-3.2.1.slim.min.js" ></script>
+        <script src="js/popper.min.js" ></script>
+        <script src="js/bootstrap.min.js" ></script>
     </body>
 </html>
